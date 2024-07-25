@@ -1,0 +1,13 @@
+spring:
+  jpa:
+    show-sql: true # 실행되는 SQL 쿼리를 콘솔에 출력
+    properties:
+      format_sql: true # SQL 쿼리를 보기 좋게 포맷팅하여 출력
+      dialect: org.hibernate.dialect.MySQL8Dialect # MySQL 8 버전에 맞는 Hibernate 방언을 사용
+    hibernate:
+      ddl-auto: validate # Hibernate가 애플리케이션 시작 시 데이터베이스 테이블 구조와 엔티티 구조를 검증
+  datasource:
+    url: ${DB_URL} # 데이터베이스 연결 URL 설정
+    driver-class-name: com.mysql.cj.jdbc.Driver # JDBC 드라이버 클래스를 지정
+    username: ${DB_USERNAME} # 데이터베이스 접속에 사용할 사용자 이름
+    password: ${DB_PASSWORD} # 데이터베이스 접속에 사용할 비밀번호
